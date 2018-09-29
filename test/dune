@@ -1,0 +1,66 @@
+(alias
+ (name runtest)
+ (deps
+  (:x comments.t)
+  comments.t.expected
+ )
+ (action
+  (progn
+   (run %{exe:../bin/main.exe} %{x})
+   (diff? %{x}.expected %{x}.corrected)
+  )
+ )
+)
+
+(alias
+ (name runtest)
+ (deps
+  (:x lines.t)
+ )
+ (action
+  (progn
+   (run %{exe:../bin/main.exe} %{x})
+   (diff? %{x} %{x}.corrected)
+  )
+ )
+)
+
+(alias
+ (name runtest)
+ (deps
+  (:x here.t)
+ )
+ (action
+  (progn
+   (run %{exe:../bin/main.exe} %{x})
+   (diff? %{x} %{x}.corrected)
+  )
+ )
+)
+
+(alias
+ (name runtest)
+ (deps
+  (:x exit.t)
+  exit.t.expected
+ )
+ (action
+  (progn
+   (run %{exe:../bin/main.exe} %{x})
+   (diff? %{x}.expected %{x}.corrected)
+  )
+ )
+)
+
+(alias
+ (name runtest)
+ (deps
+  (:x nd.t)
+ )
+ (action
+  (progn
+   (run %{exe:../bin/main.exe} %{x})
+   (diff? %{x} %{x}.corrected)
+  )
+ )
+)

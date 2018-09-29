@@ -1,20 +1,20 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer:   "Thomas Gazagnaire <thomas@gazagnaire.org>"
 authors:      ["Thomas Gazagnaire <thomas@gazagnaire.org"]
 homepage:     "https://github.com/realworldocaml/craml"
 license:      "ISC"
-dev-repo:     "https://github.com/realworldocaml/craml.git"
+dev-repo:     "git+https://github.com/realworldocaml/craml.git"
 bug-reports:  "https://github.com/realworldocaml/craml/issues"
-doc:          "https://realworldocaml.github.io/craml/"
+doc:          "https://realworldocaml.github.io/craml/doc"
 
 build: [
- ["jbuilder" "subst" "-p" name] {pinned}
- ["jbuilder" "build" "-p" name "-j" jobs]
+ ["dune" "subst" "-p" name] {pinned}
+ ["dune" "build" "-p" name "-j" jobs]
 ]
-build-test: ["jbuilder" "runtest" "-p" name]
+run-test: ["dune" "runtest" "-p" name]
 
 depends: [
-  "jbuilder" {build}
+  "dune" {build}
   "fmt"
   "astring"
   "logs"
