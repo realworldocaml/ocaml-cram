@@ -5,7 +5,7 @@ services:
 - docker
 env:
   global:
-  - PINS="cram:."
+  - PINS="craml:."
   - DISTRO="debian-stable"
   matrix:
-  - PACKAGE="cram" OCAML_VERSION="4.06"
+  - PACKAGE="craml" OCAML_VERSION="4.06"
