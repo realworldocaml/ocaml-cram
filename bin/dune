@@ -1,0 +1,5 @@
+(executable
+ (name main)
+ (public_name craml)
+ (modules main)
+ (libraries fmt craml unix cmdliner logs.cli logs.fmt fmt.cli fmt.tty))
